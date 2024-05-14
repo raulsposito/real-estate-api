@@ -7,15 +7,7 @@ app.use(express.json());
 // Define an in-memory store for the listings (Array)
 const listings: Listing[] = [];
 
-// Placeholder for API endpoints
-
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
 // Add a New Listing
-
 app.post('/listings', (req, res) => {
     const newListing: Listing = req.body;
     listings.push(newListing);
@@ -23,13 +15,11 @@ app.post('/listings', (req, res) => {
 });
 
 // Retrieve All Listings
-
 app.get('/listings', (req, res) => {
     res.status(200).send(listings);
 });
   
 // Delete a Listing
-
 app.delete('/listings/:id', (req, res) => {
     const { id } = req.params;
     const index = listings.findIndex(listing => listing.id === id);
@@ -41,3 +31,4 @@ app.delete('/listings/:id', (req, res) => {
     }
 });
   
+export default app;

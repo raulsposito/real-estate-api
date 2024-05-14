@@ -1,0 +1,6 @@
+# DEFAULT
+node_modules
+*.log*
+.cache
+.output
+dist
